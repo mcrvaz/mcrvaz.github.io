@@ -103,9 +103,9 @@ section .work-container .work-content {
   height: 300px;
   margin: 2%;
   background: black;
-  transition: box-shadow 0.5s ease;
+  transition: border-color 0.5s ease;
 }
 section .work-container .work-content:hover {
-  box-shadow: 0 0 10px white;
+  border-color: grey;
   cursor: pointer;
 }
