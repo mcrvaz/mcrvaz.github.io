@@ -98,7 +98,7 @@ section .work-container {
 }
 section .work-container .work-content {
   flex-grow: 1;
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 4px;
   height: 300px;
   margin: 2%;
