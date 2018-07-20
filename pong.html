@@ -7,9 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Teko|Anaheim" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" href="./pong/TemplateData/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+  <script src="./pong/TemplateData/UnityProgress.js"></script>
+  <script src="./pong/Build/UnityLoader.js"></script>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Dist.json", {onProgress: UnityProgress});
+  </script>
   <script src="main.js"></script>
 </head>
 <body>
@@ -19,16 +24,24 @@
         Marcello Vaz
       </a>
       <nav>
-          <div class="nav-item">
-            <a href="./index.html#about">About</a>
-          </div>
-          <div class="nav-item">
-            <a href="./index.html#works">Works</a>
-          </div>
+        <div class="nav-item">
+          <a href="./index.html#about">About</a>
+        </div>
+        <div class="nav-item">
+          <a href="./index.html#works">Works</a>
+        </div>
       </nav>
     </div>
   </header>
-
-  Hallo Welt!
+  <main>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Pong-TDD</div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

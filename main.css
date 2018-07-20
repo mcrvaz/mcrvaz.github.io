@@ -100,10 +100,15 @@ section .work-container .work-content {
   flex-grow: 1;
   border: 1px solid grey;
   border-radius: 4px;
-  height: 300px;
+  width: 384px;
+  height: 216px;
   margin: 2%;
   background: black;
   transition: border-color 0.5s ease;
+}
+section .work-container .work-content img {
+  width: 100%;
+  height: 100%;
 }
 section .work-container .work-content:hover {
   border-color: white;
