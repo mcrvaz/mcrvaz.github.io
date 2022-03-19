@@ -62,7 +62,13 @@ header .header-content {
     padding: 0% 2%;
 }
 
-header .title {
+header .header-content .header-title .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .header-content .title {
     font-size: 2.2em;
     text-decoration: none;
     text-transform: uppercase;
@@ -106,7 +112,7 @@ main {
 
 section {
     width: 95%;
-    padding: 1% 0;
+    padding-top: .5%;
     margin: auto;
 }
 
@@ -134,7 +140,7 @@ section .section-header .title:focus {
 
 section .section-content {
     color: var(--light-text-color);
-    padding: 2%;
+    padding: 1% 0 2% 2%;
     font-family: 'Anaheim', sans-serif;
 }
 
@@ -142,7 +148,7 @@ section .work-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 1% 0;
+    /* margin: 1% 0; */
 }
 
 section .work-container .work-content {
@@ -200,7 +206,7 @@ section .work-container .work-content .image-container .work-details .work-title
     color: var(--light-text-color);
     text-shadow: 2px 2px black;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 section .work-container .work-content .image-container .work-details .work-links-container {
