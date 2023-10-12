@@ -4,6 +4,7 @@
     --color-3: #242423;
     --color-4: #333533;
     --color-5: #F5CB5C;
+    --color-5-low-opacity: #F5CB5C80;
 
     --dark-text-color: var(--color-3);
     --dark-text-hover-color: var(--color-5);
@@ -13,6 +14,8 @@
 
     --alt-light-text-color: var(--color-5);
     --alt-light-text-hover-color: var(--color-1);
+
+    --highlight-color: var(var(--color-5-low-opacity));
 
     --min-width: 280px;
     --max-card-width: 1080px;
@@ -114,11 +117,12 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     margin: 0 5px;
+    filter: saturate(0.8);
     transition: .5s ease;
 }
 
 .contact .profile-badge:hover {
-    transform: scale(1.1);
+    filter: none;
     transition: .5s ease;
 }
 
@@ -193,7 +197,6 @@ section .work-container .work-content .image-container {
 
 section .work-container .work-content .image-container:hover {
     border-color: var(--color-1);
-    transform: scale(1.025);
     transition: all .5s ease;
 }
 
@@ -255,7 +258,7 @@ section .work-container .work-content .image-container .work-details .work-links
 }
 
 section .work-container .work-content .image-container .work-details .work-links-container .work-links-sub-container .work-link:hover {
-    transform: scale(1.1);
+    filter: drop-shadow(2px 2px 4px #F5CB5C80);
     transition: .5s ease;
 }
 
