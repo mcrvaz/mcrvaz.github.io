@@ -1,5 +1,7 @@
 ---
 permalink: /rocket-star/
+categories:
+  - projects
 title: "Rocket Star"
 author_profile: true
 gallery:

@@ -1,5 +1,7 @@
 ---
 permalink: /medieval-merge/
+categories:
+  - projects
 title: "Medieval Merge"
 author_profile: true
 gallery:

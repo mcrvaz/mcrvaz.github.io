@@ -1,5 +1,7 @@
 ---
 permalink: /idle-museum/
+categories:
+  - projects
 title: "Idle Museum"
 author_profile: true
 gallery:

@@ -1,5 +1,7 @@
 ---
 permalink: /sports-city/
+categories:
+  - projects
 title: "Sports City"
 author_profile: true
 gallery:
