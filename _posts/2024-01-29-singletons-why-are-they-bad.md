@@ -106,6 +106,3 @@ Knowing the class' dependencies is important to create reasonable systems (Shoul
 Have you ever been affected by any of the issues listed above and still use Singletons? If so, it might be time to ditch them and consider using a more robust approach with Dependency Injection — a topic that I'll cover in-depth later. If not, well, who needs this automated testing stuff anyways, right?
 
 In any case, try to be pragmatic. What's your current project? Are you creating a game for a Game Jam? Are you prototyping something? It might be perfectly fine to use Singletons in those cases, while in more serious projects you'll probably want a more robust architecture that avoids them.
-
-## References:
-[1]: https://en.wikipedia.org/wiki/Software_design_pattern
