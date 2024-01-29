@@ -1,0 +1,149 @@
+$type-size-1: 2.441em !default; // ~39.056px
+$type-size-2: 1.953em !default; // ~31.248px
+$type-size-3: 1.563em !default; // ~25.008px
+$type-size-4: 1.25em !default; // ~20px
+$type-size-5: 1em !default; // ~16px
+$type-size-6: 0.75em !default; // ~12px
+$type-size-7: 0.6875em !default; // ~11px
+$type-size-8: 0.625em !default; // ~10px
+
+$color-1: #edecdf;
+$color-2: #CFDBD5;
+$color-3: #242423;
+$color-4: #333533;
+$color-5: #F5CB5C;
+$color-6: #dba308;
+
+$custom-monospace: Teko;
+
+$background-color: $color-4;
+$text-color: $color-1;
+$muted-text-color: $color-1;
+
+$primary-color: $color-5;
+$border-color: $color-5;
+
+$header-background-color: $color-3;
+$masthead-link-color: $color-1;
+$masthead-link-color-hover: $color-5;
+
+$footer-background-color: $color-3;
+$link-color: $color-6;
+$link-color-hover: $color-5;
+$navicon-link-color-hover: mix(#fff, $text-color, 80%);
+
+$code-background-color: mix(#000, $background-color, 40%) !default;
+$code-background-color-dark: mix(#000, $background-color, 60%) !default;
+
+$github-color: white;
+
+.initial-content {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23242423' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#footer {
+    border-top: 1px solid $border-color;
+    margin-top: 0;
+}
+
+.author__avatar {
+    img {
+        max-width: 180px !important;
+        border: 2px solid $border-color !important;
+    }
+}
+
+.masthead {
+    background-color: $header-background-color;
+
+    #site-nav {
+        background-color: $header-background-color;
+    }
+
+    a {
+        font-family: $custom-monospace !important;
+        text-transform: uppercase;
+        font-size: $type-size-4;
+        font-weight: normal;
+    }
+
+    a.site-title {
+        transition: color .5s ease;
+        font-size: $type-size-3;
+    }
+}
+
+.page__footer-follow {
+    a {
+        text-transform: none !important;
+    }
+}
+
+a.project__link {
+    display: contents;
+
+    .archive__item-title {
+        font-size: $type-size-5;
+        color: $color-6;
+        margin-top: 0.5em;
+        padding-bottom: 0;
+    }
+
+    .archive__item-excerpt {
+        font-size: $type-size-7;
+        color: $color-1;
+    }
+}
+
+a.project__link:hover {
+    .archive__item-title {
+        color: $color-5;
+        transition: color .5s ease;
+    }
+}
+
+.feature__item:nth-child(3n + 1) {
+    clear: none !important;
+    margin-left: 0 !important;
+}
+
+.feature__item {
+    width: 40% !important;
+    padding-right: 5%;
+}
+
+.archive__item-teaser {
+    img {
+        border: 2px solid $border-color;
+        border-radius: 4px;
+    }
+}
+
+.project__screenshot img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.project__links {
+    display: flex;
+    align-items: center;
+
+    .google-play {
+        width: 265px;
+    }
+
+    .app-store {
+        width: 270px;
+
+        img {
+            padding: 0 6.27%;
+            width: 88%;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
