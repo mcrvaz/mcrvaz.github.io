@@ -1,5 +1,6 @@
 ---
 title: "Singletons: Why are they bad?"
+excerpt: "So, what makes Singletons so bad? Should you avoid them? How can you replace them? Let's find out!"
 date: 2024-01-29 00:00:00 -03:00
 classes: wide
 categories:
@@ -15,7 +16,7 @@ tags:
 You've probably heard this one before, or at least some variation of it. 
 
 This opinion gets thrown around pretty often, especially in game dev communities, and most of the time there isn't really any explanation along with it.
-So, What makes Singletons so bad? Should you avoid them? How can you replace them?
+So, what makes Singletons so bad? Should you avoid them? How can you replace them?
 
 Let's find out!
 

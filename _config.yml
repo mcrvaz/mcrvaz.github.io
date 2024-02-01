@@ -16,9 +16,7 @@
 title: Marcello Vaz
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Marcello Vaz's tech blog. I write about software development, usually about Unity and C#.
 twitter_username: username
 github_username: mcrvaz
 minimal_mistakes_skin: default
@@ -60,7 +58,7 @@ plugins:
 author:
   name   : "Marcello Vaz"
   avatar : "/assets/images/bio-photo.png"
-  bio    : "A generalist game programmer. Strongly focused on delivering clean code, high quality products and enjoyable gaming experiences."
+  bio    : ""
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"

@@ -1,5 +1,6 @@
 ---
 title: "Unity UI Tips - Canvas Sorting Order"
+excerpt: "How can we modify the Canvas sorting order in a reasonable and maintanable way?"
 date: 2024-01-29T00:00:00-03:00
 classes: wide
 categories:
@@ -24,14 +25,15 @@ gallery:
     title: "The loading overlay is visible on top of the popup."
 ---
 
-If you've been dealing with Unity UI for a while, it's very possible that you've had to interact with the `Canvas` component sorting order. Maybe in that rushed Game Jam project that you just threw "999" in there, or maybe a more serious project that you actually tried to follow some rules for modifying it. The fact is that modyifing the hierarchy sometimes is simply not enough.  
+If you've been dealing with Unity UI for a while, it's very possible that you've had to interact with the `Canvas` component sorting order.
+Maybe in that rushed Game Jam project that you just threw "999" in there, or maybe a more serious project that you actually tried to follow some rules for modifying it. The fact is that modyifing the hierarchy sometimes is simply not enough.  
 So this leads to the question: how can we modify the Canvas sorting order in a reasonable and maintanable way? 
 
 Here's how I've been dealing with it.
 
 # Implementation
 
-First, we need to give names to our sorting layers. [Magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) have no meaning and makes it harder to understand what's going on, either in code or in the Unity Inspector.
+First, we need to give names to our sorting layers. [Magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) are really bad for maintanability and they make it harder to understand what's going on, either in code or in the Unity Inspector.
 So let's create an `enum` to help us here. I'll also add some values here for demonstration purposes, just make sure to change them to something that makes sense to your project.
 
 ## Naming layers
@@ -46,6 +48,7 @@ public enum CanvasId
     UIEffects = 4,
 }
 ```
+
 {% capture notice-1 %}
 #### Quick tip!
 *Always* give numeric values to your **serializable** enums.  
@@ -102,9 +105,9 @@ public class CanvasSortingOrderSettings : ScriptableObject
 ```
 
 If you're unfamiliar with `ScriptableObjects`, they're used exclusively to store data; in this case we are storing a list of our `CanvaIds`.
-This script also adds a new [MenuItem](https://docs.unity3d.com/ScriptReference/MenuItem.html) to create an instance of this `ScriptableObject`. Make sure to create this instance before proceeding. 
+This script also adds a new [MenuItem](https://docs.unity3d.com/ScriptReference/MenuItem.html) to create an instance of this `ScriptableObject`. **Make sure to create this instance before proceeding.**  
 
-The most important function here is `GetSortingOrder(CanvasId id)`, and it's a pretty simple one, it just grabs the index of that `CanvasId` inside our `canvasIds` list. This is the value that'll be used later to set the actual sorting order.
+The most important function here is `GetSortingOrder(CanvasId id)`, and it's a pretty simple one, it just grabs the index of that `CanvasId` inside our `canvasIds` list. This is the value that'll be used later as the actual sorting order.
 
 It should look like the image below after adding your elements:
 
@@ -163,10 +166,14 @@ GetComponent<Canvas>().sortingOrder = (int)CanvasId.HUD;
 GetComponent<CanvasSortingOrder>().CanvasId = CanvasId.HUD;
 ```
 
-# Results 
+# Conclusion 
 Check out the images below to see how it works in practice.  
 You can see the `CanvasSortingOrder` component next to each `Canvas` altering the sorting order. Notice that without changing the sorting orders, the "Loading" screen would appear below the "Fullscreen".
 
 {% include gallery layout="third" %}
 
-Be advised that this is a very simple implementation, it uses a [Singleton]({% post_url 2024-01-29-singletons-why-are-they-bad %}) and loads assets from the [Resources](https://docs.unity3d.com/ScriptReference/Resources.html) folder, which may or may not be interesting for your projects. Make sure to tweak it to fit your needs!  
+To sum it up: now you can give names to your sorting order layers and order them through the inspector.  
+
+Be advised that this is a very bare bones implementation, it uses a [Singleton]({% post_url 2024-01-29-singletons-why-are-they-bad %}) and loads assets from the [Resources](https://docs.unity3d.com/ScriptReference/Resources.html) folder, which may or may not be interesting for your projects. It's also missing some treatments for corner cases, like placing duplicate `CanvasIds` in your `CanvasSortingOrderSettings`.  
+
+Make sure to tweak it to fit your needs!  
