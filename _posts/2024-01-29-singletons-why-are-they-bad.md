@@ -52,7 +52,7 @@ It's hard to have an absolute guarantee of having only a single instance of a cl
 Therefore, this isn't a problem that a simple Singleton implementation will solve by itself; you'll need to apply considerable effort here.
 
 ### Lazy Initialization
-Singletons are usually lazy-loaded; they're initialized when called for the first time. This is usually a good thing, since you only grab the resources when you actually need them. However, sometimes it can be harmful to your game's performance.
+Singletons are usually lazy-loaded; they're instantiated when called for the first time. This is usually a good thing, since you only grab the resources when you actually need them. However, sometimes it can be harmful to your game's performance.
 
 Imagine the following scenario:
 
@@ -100,10 +100,10 @@ Notice that the Singleton approach is using a concrete class for settings access
 Testability goes hand in hand with coupling. If your class is coupled to the actual `MeleeEnemySettings` implementation, it means that altering the values might also break your automated tests. In the DI version you're able to use mock values and create unit tests easily.
 
 **Implicit dependencies**  
-It's trivial to list all the dependencies of the DI version since they're stated in the constructor. In the Singleton version, not so much, because you need to look at the whole class for static accessess.
+It's trivial to list all the dependencies of the DI version since they're stated in the constructor. On the other hand, it's not so trivial in the Singleton version, because you need to look at the whole class for static accessess.
 Knowing the class' dependencies is important to create reasonable systems (Should your pathfinding system be coupled with your trading system? Probably not!) and avoid circular dependencies.
 
 ## Conclusion
-Have you ever been affected by any of the issues listed above and still use Singletons? If so, it might be time to ditch them and consider using a more robust approach with Dependency Injection — a topic that I'll cover in-depth later. If not, well, who needs this automated testing stuff anyways, right?
+Have you ever been affected by any of the issues listed above and you still use Singletons? If so, it might be time to ditch them and consider using a more robust approach with Dependency Injection — a topic that I'll cover in-depth later. If not, well, who needs this automated testing stuff anyways, right?
 
-In any case, try to be pragmatic. What's your current project? Are you creating a game for a Game Jam? Are you prototyping something? It might be perfectly fine to use Singletons in those cases, while in more serious projects you'll probably want a more robust architecture that avoids them.
+In any case, try to be pragmatic. What's your current project? Are you creating a game for a Game Jam? Are you prototyping something? It might be perfectly fine to use Singletons in those cases, while in a more serious project you'll probably want a robust architecture that avoids them.

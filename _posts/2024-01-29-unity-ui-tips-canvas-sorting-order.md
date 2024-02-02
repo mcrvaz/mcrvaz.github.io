@@ -1,7 +1,7 @@
 ---
 title: "Unity UI Tips - Canvas Sorting Order"
-excerpt: "How can we modify the Canvas sorting order in a reasonable and maintanable way?"
-date: 2024-01-29T00:00:00-03:00
+excerpt: "How can we modify the Canvas sorting order in a reasonable and maintainable way?"
+date: 2024-01-29 00:00:00 -03:00
 classes: wide
 categories:
   - blog
@@ -26,15 +26,15 @@ gallery:
 ---
 
 If you've been dealing with Unity UI for a while, it's very possible that you've had to interact with the `Canvas` component sorting order.
-Maybe in that rushed Game Jam project that you just threw "999" in there, or maybe a more serious project that you actually tried to follow some rules for modifying it. The fact is that modyifing the hierarchy sometimes is simply not enough.  
-So this leads to the question: how can we modify the Canvas sorting order in a reasonable and maintanable way? 
+Maybe in that rushed Game Jam project that you just threw "999" in there, or maybe in a more serious project that you actually tried to follow some rules for modifying it. The fact is that modifying the hierarchy sometimes is simply not enough.  
+So this leads to the question: how can we modify the Canvas sorting order in a reasonable and maintainable way? 
 
 Here's how I've been dealing with it.
 
 # Implementation
 
-First, we need to give names to our sorting layers. [Magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) are really bad for maintanability and they make it harder to understand what's going on, either in code or in the Unity Inspector.
-So let's create an `enum` to help us here. I'll also add some values here for demonstration purposes, just make sure to change them to something that makes sense to your project.
+First, we need to give names to our sorting layers. [Magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) are really bad for maintainability and they make it harder to understand what's going on, either in code or in the Unity Inspector.
+To address this, let's create an `enum` to assist us. I'll also add some values here for demonstration purposes, just make sure to change them to something that makes sense to your project.
 
 ## Naming layers
 
