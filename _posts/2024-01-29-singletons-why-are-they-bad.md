@@ -100,7 +100,7 @@ Notice that the Singleton approach is using a concrete class for settings access
 Testability goes hand in hand with coupling. If your class is coupled to the actual `MeleeEnemySettings` implementation, it means that altering the values might also break your automated tests. In the DI version you're able to use mock values and create unit tests easily.
 
 **Implicit dependencies**  
-It's trivial to list all the dependencies of the DI version since they're stated in the constructor. On the other hand, it's not so trivial in the Singleton version, because you need to look at the whole class for static accessess.
+It's trivial to list all the dependencies of the DI version since they're stated in the constructor. On the other hand, it's not so trivial in the Singleton version, because you need to look at the whole class for static accesses.
 Knowing the class' dependencies is important to create reasonable systems (Should your pathfinding system be coupled with your trading system? Probably not!) and avoid circular dependencies.
 
 ## Conclusion
