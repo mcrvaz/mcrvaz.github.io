@@ -1,5 +1,5 @@
 ---
-title: "Unity UI Tips - Canvas Sorting Order"
+title: "Unity UI Tips: Canvas Sorting Order"
 excerpt: "How can we modify the Canvas sorting order in a reasonable and maintainable way?"
 date: 2024-01-29 00:00:00 -03:00
 classes: wide
