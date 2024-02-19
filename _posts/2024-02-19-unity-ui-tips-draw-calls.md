@@ -68,7 +68,7 @@ Check it out:
 [![small image](/assets/images/posts/2024-02-19-unity-ui-tips-draw-calls/drawcall-mask-02.png)](/assets/images/posts/2024-02-19-unity-ui-tips-draw-calls/drawcall-mask-02.png)
 <figcaption>A RectMask2D component was applied to the "Viewport" element.</figcaption><br>
 
-You can see that RectMask2D is actually rendering less vertices (24 vs 48), that means that all of those invisible "HeartContainer" aren't being rendered. It also needed one less draw call than the Mask component variant.
+You can see that RectMask2D is actually rendering less vertices (24 vs 48), that means that none of those invisible "HeartContainer" are being rendered. It also needed one less draw call than the Mask component variant.
 
 ## Extras
 
