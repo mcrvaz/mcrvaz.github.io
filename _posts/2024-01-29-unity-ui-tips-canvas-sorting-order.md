@@ -1,6 +1,8 @@
 ---
 title: "Unity UI Tips: Canvas Sorting Order"
 excerpt: "How can we modify the Canvas sorting order in a reasonable and maintainable way?"
+header: 
+  teaser: "assets/images/posts/2024-01-29-unity-ui-tips-canvas-sorting-order/canvas-sorting-order-inspector.png"
 date: 2024-01-29 00:00:00 -03:00
 classes: wide
 categories:

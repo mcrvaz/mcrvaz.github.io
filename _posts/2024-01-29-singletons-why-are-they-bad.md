@@ -1,6 +1,8 @@
 ---
 title: "Singletons: Why are they bad?"
 excerpt: "So, what makes Singletons so bad? Should you avoid them? How can you replace them? Let's find out!"
+header: 
+  teaser: "/assets/images/posts/2024-01-29-singletons-why-are-they-bad/atomicrops.png"
 date: 2024-01-29 00:00:00 -03:00
 classes: wide
 categories:
