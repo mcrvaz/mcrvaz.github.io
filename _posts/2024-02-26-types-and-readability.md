@@ -2,6 +2,8 @@
 title: "Types and Readability"
 excerpt: "Make your intent explicit with the correct types!"
 date: 2024-02-19 00:00:00 -03:00
+header: 
+  teaser: "/assets/images/posts/2024-02-26-types-and-readability/typesystem.png"
 classes: wide
 categories:
   - blog
@@ -17,7 +19,7 @@ Today we'll be exploring how to make your code more readable and maintainable by
 Let's talk a bit about them.
 
 ## Hello World
-You've probably written a Hello World! program in a few languages, right? Some are a bit more verbose, some less. 
+You've probably written a "Hello World!" program in a few languages, right? Some are a bit more verbose, some less. 
 
 Here's how it's done in Python:
 ```python
@@ -38,7 +40,7 @@ The Python version is obviously shorter, but it's doing a bit less. In the C# ve
 
 You might ask yourself, "why would I want to do all that just to print "Hello world!"? Surely this is unnecessary." — And it is! But most of the time you don't simply want to print "Hello World!", you want a fully functional program that does a bunch of things, and this additional information helps you achieve that. How so, you ask?
 
-The additional information is mostly types (`Program`, `Main`, `Console`) and access modifiers (`public`) and they help you define rules for interaction between objects, and those rules are enforced by the compiler, which is a good thing!
+The additional information is mostly types (`Program`, `Main`, `Console`) and access modifiers (`public`) and they help you define rules for interaction between objects, and those rules are enforced by the compiler, which is a good thing! And we can double down on this and use the type system to help us read and understand the code more easily.
 
 I've prepared a few examples of how using more suitable types can make your code more readable and maintainable, let's check them out. 
 
@@ -50,8 +52,8 @@ string GetResponseCodeDescription(int responseCode);
 ```
 Seems pretty straightforward, but it raises a few questions:
 
-What does the error value mean? Are those some kind of specific error codes? Are they custom?
-And about the `GetErrorDescription`, what are the valid values for this function? Can the `responseCode` be negative?
+What does the response value mean? Are those some kind of specific response codes? Are they custom?
+And about the `GetResponseCodeDescription`, what are the valid values for this function? Can the `responseCode` be negative?
 
 You could amend this a bit by adding comments specifying all that, but it's not a great solution.
 
@@ -121,9 +123,9 @@ Stack<Card> deck;
 ```
 Spoiler: It's the `Stack`. But it also depends.
 
-The data structure helps you enforce your business logic here (always grab the top card). By using a `List` you open up the possibility to grab cards from the bottom or middle of the deck, and it might not be desirable. What matters here is intent.
+The data structure helps you enforce your business logic here (always grab the top card). By using a `List` you open up the possibility to grab cards from the bottom or middle of the deck, and that might not be desirable. What matters here is intent.
 
-Let's see some additional examples:
+Let's see an additional example:
 ```csharp
 class QuestManager 
 {
@@ -133,7 +135,7 @@ class QuestManager
     }
 }
 ```
-Consider that this function returns a reference to the list that holds the active quests. You probably don't want to mess around with it, not add, remove or reorder anything, since the `QuestManager` won't know about those modifications. In this case it would be probably better to use an `IReadOnlyList`:
+Consider that this function returns a reference to the list that holds the active quests. You probably don't want to mess around with it; not add, remove or reorder anything, since the `QuestManager` won't know about those modifications. In this case it would be probably better to use an `IReadOnlyList`:
 ```csharp
 class QuestManager 
 {
@@ -143,7 +145,8 @@ class QuestManager
     }
 }
 ```
-Now your intent is explicit. This collection is just for reading purposes, you shouldn't modify it. Another cool thing here is that `List` already implements `IReadOnlyList`, so it's even easier to refactor. 
+Now your intent is explicit. This collection is just for reading purposes, you shouldn't modify it. Another cool thing here is that `List` already implements `IReadOnlyList`, so it's even easier to refactor.
+ 
 Notice that this isn't going to make it impossible to modify the collection, since it can be cast back to `List` — This is purely semantic.
 
 ## Conclusion
