@@ -19,7 +19,7 @@ Today we'll be exploring how to make your code more readable and maintainable by
 Let's talk a bit about them.
 
 ## Hello World
-You've probably written a "Hello World!" program in a few languages, right? Some are a bit more verbose, some less. 
+You've probably written a "Hello world!" program in a few languages, right? Some are a bit more verbose, some less. 
 
 Here's how it's done in Python:
 ```python
@@ -38,9 +38,9 @@ public class Program
 
 The Python version is obviously shorter, but it's doing a bit less. In the C# version we are declaring a class, a static function inside this class, we are defining their access modifiers, and also accessing the function `WriteLine` inside the `Console` class that lives in the `System` namespace, and then printing the message. Quite a lot going on!
 
-You might ask yourself, "why would I want to do all that just to print "Hello world!"? Surely this is unnecessary." — And it is! But most of the time you don't simply want to print "Hello World!", you want a fully functional program that does a bunch of things, and this additional information helps you achieve that. How so, you ask?
+You might ask yourself, "why would I want to do all that just to print "Hello world!"? Surely this is unnecessary." — And it is! But most of the time you don't simply want to print "Hello world!", you want a fully functional program that does a bunch of things, and this additional information helps you achieve that. How so, you ask?
 
-The additional information is mostly types (`Program`, `Main`, `Console`) and access modifiers (`public`) and they help you define rules for interaction between objects, and those rules are enforced by the compiler, which is a good thing! And we can double down on this and use the type system to help us read and understand the code more easily.
+The additional information are mostly types (`Program`, `Main`, `Console`) and access modifiers (`public`) and they help you define rules for interaction between objects. Those rules are enforced by the compiler, which is a good thing! Besides we can double down on this and use the type system to help us read and understand the code more easily.
 
 I've prepared a few examples of how using more suitable types can make your code more readable and maintainable, let's check them out. 
 
